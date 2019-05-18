@@ -1,6 +1,6 @@
 import pytest
 
-from fte import create_app
+from app import create_app
 
 
 @pytest.fixture
@@ -15,7 +15,7 @@ def client(app):
 
 @pytest.fixture
 def db(app):
-    from fte import db
+    from app import db
     with app.app_context():
         db.create_all()
         yield db

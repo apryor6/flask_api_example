@@ -119,4 +119,4 @@ venv.bak/
 misc/
 .Rproj.user
 
-fte/app-test.db
+app/app-test.db

@@ -1,7 +1,3 @@
-# flask_testing_examples
+# flask_api_example
 
-A collection of examples for testing Flask applications
-
-## Running the tests
-
-All tests in this repository can be run by installing PyTest with `pip install pytest` and invoking the command `pytest`
+A sample project showing how to build a scalable, maintainable, modular Flask API with a heavy emphasis on testing.
