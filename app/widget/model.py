@@ -1,7 +1,6 @@
 from sqlalchemy import Integer, Column, String
 from app import db  # noqa
 from .interface import WidgetInterface
-from typing import Any
 
 
 class Widget(db.Model):  # type: ignore
