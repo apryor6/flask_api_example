@@ -4,7 +4,7 @@ from .model import Fizzbar
 from .interface import FizzbarInterface
 
 
-class FizzbarService():
+class FizzbarService:
     @staticmethod
     def get_all() -> List[Fizzbar]:
         return Fizzbar.query.all()
@@ -30,10 +30,7 @@ class FizzbarService():
 
     @staticmethod
     def create(new_attrs: FizzbarInterface) -> Fizzbar:
-        new_fizzbar = Fizzbar(
-            name=new_attrs['name'],
-            purpose=new_attrs['purpose']
-        )
+        new_fizzbar = Fizzbar(name=new_attrs["name"], purpose=new_attrs["purpose"])
 
         db.session.add(new_fizzbar)
         db.session.commit()

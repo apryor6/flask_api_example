@@ -4,7 +4,7 @@ from .model import Whatsit
 from .interface import WhatsitInterface
 
 
-class WhatsitService():
+class WhatsitService:
     @staticmethod
     def get_all() -> List[Whatsit]:
         return Whatsit.query.all()
@@ -30,10 +30,7 @@ class WhatsitService():
 
     @staticmethod
     def create(new_attrs: WhatsitInterface) -> Whatsit:
-        new_whatsit = Whatsit(
-            name=new_attrs['name'],
-            purpose=new_attrs['purpose']
-        )
+        new_whatsit = Whatsit(name=new_attrs["name"], purpose=new_attrs["purpose"])
 
         db.session.add(new_whatsit)
         db.session.commit()

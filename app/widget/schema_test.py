@@ -15,13 +15,11 @@ def test_WidgetSchema_create(schema: WidgetSchema):
 
 
 def test_WidgetSchema_works(schema: WidgetSchema):
-    params: WidgetInterface = schema.load({
-        'widgetId': '123',
-        'name': 'Test widget',
-        'purpose': 'Test purpose'
-    }).data
+    params: WidgetInterface = schema.load(
+        {"widgetId": "123", "name": "Test widget", "purpose": "Test purpose"}
+    ).data
     widget = Widget(**params)
 
     assert widget.widget_id == 123
-    assert widget.name == 'Test widget'
-    assert widget.purpose == 'Test purpose'
+    assert widget.name == "Test widget"
+    assert widget.purpose == "Test purpose"

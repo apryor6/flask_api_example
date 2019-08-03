@@ -7,8 +7,8 @@ from .interface import DoodadInterface
 
 
 def test_get_all(db: SQLAlchemy):  # noqa
-    yin: Doodad = Doodad(doodad_id=1, name='Yin', purpose='thing 1')
-    yang: Doodad = Doodad(doodad_id=2, name='Yang', purpose='thing 2')
+    yin: Doodad = Doodad(doodad_id=1, name="Yin", purpose="thing 1")
+    yang: Doodad = Doodad(doodad_id=2, name="Yang", purpose="thing 2")
     db.session.add(yin)
     db.session.add(yang)
     db.session.commit()
@@ -20,21 +20,21 @@ def test_get_all(db: SQLAlchemy):  # noqa
 
 
 def test_update(db: SQLAlchemy):  # noqa
-    yin: Doodad = Doodad(doodad_id=1, name='Yin', purpose='thing 1')
+    yin: Doodad = Doodad(doodad_id=1, name="Yin", purpose="thing 1")
 
     db.session.add(yin)
     db.session.commit()
-    updates: DoodadInterface = dict(name='New Doodad name')
+    updates: DoodadInterface = dict(name="New Doodad name")
 
     DoodadService.update(yin, updates)
 
     result: Doodad = Doodad.query.get(yin.doodad_id)
-    assert result.name == 'New Doodad name'
+    assert result.name == "New Doodad name"
 
 
 def test_delete_by_id(db: SQLAlchemy):  # noqa
-    yin: Doodad = Doodad(doodad_id=1, name='Yin', purpose='thing 1')
-    yang: Doodad = Doodad(doodad_id=2, name='Yang', purpose='thing 2')
+    yin: Doodad = Doodad(doodad_id=1, name="Yin", purpose="thing 1")
+    yang: Doodad = Doodad(doodad_id=2, name="Yang", purpose="thing 2")
     db.session.add(yin)
     db.session.add(yang)
     db.session.commit()
@@ -50,7 +50,7 @@ def test_delete_by_id(db: SQLAlchemy):  # noqa
 
 def test_create(db: SQLAlchemy):  # noqa
 
-    yin: DoodadInterface = dict(name='Fancy new doodad', purpose='Fancy new purpose')
+    yin: DoodadInterface = dict(name="Fancy new doodad", purpose="Fancy new purpose")
     DoodadService.create(yin)
     results: List[Doodad] = Doodad.query.all()
 

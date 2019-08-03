@@ -5,9 +5,7 @@ from .interface import DoodadInterface
 
 @fixture
 def interface() -> DoodadInterface:
-    return DoodadInterface(
-        doodad_id=1, name='Test doodad', purpose='Test purpose'
-    )
+    return DoodadInterface(doodad_id=1, name="Test doodad", purpose="Test purpose")
 
 
 def test_DoodadInterface_create(interface: DoodadInterface):

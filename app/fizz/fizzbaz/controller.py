@@ -9,47 +9,47 @@ from .service import FizzbazService
 from .model import Fizzbaz
 from .interface import FizzbazInterface
 
-api = Namespace('Fizzbaz', description='A modular namespace within fizz')  # noqa
+api = Namespace("Fizzbaz", description="A modular namespace within fizz")  # noqa
 
 
-@api.route('/')
+@api.route("/")
 class FizzbazResource(Resource):
-    '''Fizzbazs'''
+    """Fizzbaz"""
 
     @responds(schema=FizzbazSchema, many=True)
     def get(self) -> List[Fizzbaz]:
-        '''Get all Fizzbazs'''
+        """Get all Fizzbaz"""
 
         return FizzbazService.get_all()
 
     @accepts(schema=FizzbazSchema, api=api)
     @responds(schema=FizzbazSchema)
     def post(self) -> Fizzbaz:
-        '''Create a Single Fizzbaz'''
+        """Create a Single Fizzbaz"""
 
         return FizzbazService.create(request.parsed_obj)
 
 
-@api.route('/<int:fizzbazId>')
-@api.param('fizzbazId', 'Fizzbaz database ID')
+@api.route("/<int:fizzbazId>")
+@api.param("fizzbazId", "Fizzbaz database ID")
 class FizzbazIdResource(Resource):
     @responds(schema=FizzbazSchema)
     def get(self, fizzbazId: int) -> Fizzbaz:
-        '''Get Single Fizzbaz'''
+        """Get Single Fizzbaz"""
 
         return FizzbazService.get_by_id(fizzbazId)
 
     def delete(self, fizzbazId: int) -> Response:
-        '''Delete Single Fizzbaz'''
+        """Delete Single Fizzbaz"""
         from flask import jsonify
 
         id = FizzbazService.delete_by_id(fizzbazId)
-        return jsonify(dict(status='Success', id=id))
+        return jsonify(dict(status="Success", id=id))
 
     @accepts(schema=FizzbazSchema, api=api)
     @responds(schema=FizzbazSchema)
     def put(self, fizzbazId: int) -> Fizzbaz:
-        '''Update Single Fizzbaz'''
+        """Update Single Fizzbaz"""
 
         changes: FizzbazInterface = request.parsed_obj
         Fizzbaz = FizzbazService.get_by_id(fizzbazId)

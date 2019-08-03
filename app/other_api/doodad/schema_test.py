@@ -15,13 +15,11 @@ def test_DoodadSchema_create(schema: DoodadSchema):
 
 
 def test_DoodadSchema_works(schema: DoodadSchema):
-    params: DoodadInterface = schema.load({
-        'doodadId': '123',
-        'name': 'Test doodad',
-        'purpose': 'Test purpose'
-    }).data
+    params: DoodadInterface = schema.load(
+        {"doodadId": "123", "name": "Test doodad", "purpose": "Test purpose"}
+    ).data
     doodad = Doodad(**params)
 
     assert doodad.doodad_id == 123
-    assert doodad.name == 'Test doodad'
-    assert doodad.purpose == 'Test purpose'
+    assert doodad.name == "Test doodad"
+    assert doodad.purpose == "Test purpose"

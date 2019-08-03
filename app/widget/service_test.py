@@ -7,8 +7,8 @@ from .interface import WidgetInterface
 
 
 def test_get_all(db: SQLAlchemy):  # noqa
-    yin: Widget = Widget(widget_id=1, name='Yin', purpose='thing 1')
-    yang: Widget = Widget(widget_id=2, name='Yang', purpose='thing 2')
+    yin: Widget = Widget(widget_id=1, name="Yin", purpose="thing 1")
+    yang: Widget = Widget(widget_id=2, name="Yang", purpose="thing 2")
     db.session.add(yin)
     db.session.add(yang)
     db.session.commit()
@@ -20,21 +20,21 @@ def test_get_all(db: SQLAlchemy):  # noqa
 
 
 def test_update(db: SQLAlchemy):  # noqa
-    yin: Widget = Widget(widget_id=1, name='Yin', purpose='thing 1')
+    yin: Widget = Widget(widget_id=1, name="Yin", purpose="thing 1")
 
     db.session.add(yin)
     db.session.commit()
-    updates: WidgetInterface = dict(name='New Widget name')
+    updates: WidgetInterface = dict(name="New Widget name")
 
     WidgetService.update(yin, updates)
 
     result: Widget = Widget.query.get(yin.widget_id)
-    assert result.name == 'New Widget name'
+    assert result.name == "New Widget name"
 
 
 def test_delete_by_id(db: SQLAlchemy):  # noqa
-    yin: Widget = Widget(widget_id=1, name='Yin', purpose='thing 1')
-    yang: Widget = Widget(widget_id=2, name='Yang', purpose='thing 2')
+    yin: Widget = Widget(widget_id=1, name="Yin", purpose="thing 1")
+    yang: Widget = Widget(widget_id=2, name="Yang", purpose="thing 2")
     db.session.add(yin)
     db.session.add(yang)
     db.session.commit()
@@ -50,7 +50,7 @@ def test_delete_by_id(db: SQLAlchemy):  # noqa
 
 def test_create(db: SQLAlchemy):  # noqa
 
-    yin: WidgetInterface = dict(name='Fancy new widget', purpose='Fancy new purpose')
+    yin: WidgetInterface = dict(name="Fancy new widget", purpose="Fancy new purpose")
     WidgetService.create(yin)
     results: List[Widget] = Widget.query.all()
 

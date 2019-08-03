@@ -6,9 +6,7 @@ from .model import Fizzbaz
 
 @fixture
 def fizzbaz() -> Fizzbaz:
-    return Fizzbaz(
-        fizzbaz_id=1, name='Test fizzbaz', purpose='Test purpose'
-    )
+    return Fizzbaz(fizzbaz_id=1, name="Test fizzbaz", purpose="Test purpose")
 
 
 def test_Fizzbaz_create(fizzbaz: Fizzbaz):

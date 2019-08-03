@@ -7,8 +7,8 @@ from .interface import FizzbarInterface
 
 
 def test_get_all(db: SQLAlchemy):  # noqa
-    yin: Fizzbar = Fizzbar(fizzbar_id=1, name='Yin', purpose='thing 1')
-    yang: Fizzbar = Fizzbar(fizzbar_id=2, name='Yang', purpose='thing 2')
+    yin: Fizzbar = Fizzbar(fizzbar_id=1, name="Yin", purpose="thing 1")
+    yang: Fizzbar = Fizzbar(fizzbar_id=2, name="Yang", purpose="thing 2")
     db.session.add(yin)
     db.session.add(yang)
     db.session.commit()
@@ -20,21 +20,21 @@ def test_get_all(db: SQLAlchemy):  # noqa
 
 
 def test_update(db: SQLAlchemy):  # noqa
-    yin: Fizzbar = Fizzbar(fizzbar_id=1, name='Yin', purpose='thing 1')
+    yin: Fizzbar = Fizzbar(fizzbar_id=1, name="Yin", purpose="thing 1")
 
     db.session.add(yin)
     db.session.commit()
-    updates: FizzbarInterface = dict(name='New Fizzbar name')
+    updates: FizzbarInterface = dict(name="New Fizzbar name")
 
     FizzbarService.update(yin, updates)
 
     result: Fizzbar = Fizzbar.query.get(yin.fizzbar_id)
-    assert result.name == 'New Fizzbar name'
+    assert result.name == "New Fizzbar name"
 
 
 def test_delete_by_id(db: SQLAlchemy):  # noqa
-    yin: Fizzbar = Fizzbar(fizzbar_id=1, name='Yin', purpose='thing 1')
-    yang: Fizzbar = Fizzbar(fizzbar_id=2, name='Yang', purpose='thing 2')
+    yin: Fizzbar = Fizzbar(fizzbar_id=1, name="Yin", purpose="thing 1")
+    yang: Fizzbar = Fizzbar(fizzbar_id=2, name="Yang", purpose="thing 2")
     db.session.add(yin)
     db.session.add(yang)
     db.session.commit()
@@ -50,7 +50,7 @@ def test_delete_by_id(db: SQLAlchemy):  # noqa
 
 def test_create(db: SQLAlchemy):  # noqa
 
-    yin: FizzbarInterface = dict(name='Fancy new fizzbar', purpose='Fancy new purpose')
+    yin: FizzbarInterface = dict(name="Fancy new fizzbar", purpose="Fancy new purpose")
     FizzbarService.create(yin)
     results: List[Fizzbar] = Fizzbar.query.all()
 

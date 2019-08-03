@@ -5,9 +5,9 @@ from typing import Any
 
 
 class Whatsit(db.Model):  # type: ignore
-    '''A snazzy Whatsit'''
+    """A snazzy Whatsit"""
 
-    __tablename__ = 'whatsit'
+    __tablename__ = "whatsit"
 
     whatsit_id = Column(Integer(), primary_key=True)
     name = Column(String(255))

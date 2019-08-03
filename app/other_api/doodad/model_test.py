@@ -6,9 +6,7 @@ from .model import Doodad
 
 @fixture
 def doodad() -> Doodad:
-    return Doodad(
-        doodad_id=1, name='Test doodad', purpose='Test purpose'
-    )
+    return Doodad(doodad_id=1, name="Test doodad", purpose="Test purpose")
 
 
 def test_Doodad_create(doodad: Doodad):

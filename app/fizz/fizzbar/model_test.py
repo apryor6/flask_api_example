@@ -6,9 +6,7 @@ from .model import Fizzbar
 
 @fixture
 def fizzbar() -> Fizzbar:
-    return Fizzbar(
-        fizzbar_id=1, name='Test fizzbar', purpose='Test purpose'
-    )
+    return Fizzbar(fizzbar_id=1, name="Test fizzbar", purpose="Test purpose")
 
 
 def test_Fizzbar_create(fizzbar: Fizzbar):

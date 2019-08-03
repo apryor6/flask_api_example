@@ -5,9 +5,7 @@ from .interface import WhatsitInterface
 
 @fixture
 def interface() -> WhatsitInterface:
-    return WhatsitInterface(
-        whatsit_id=1, name='Test whatsit', purpose='Test purpose'
-    )
+    return WhatsitInterface(whatsit_id=1, name="Test whatsit", purpose="Test purpose")
 
 
 def test_WhatsitInterface_create(interface: WhatsitInterface):

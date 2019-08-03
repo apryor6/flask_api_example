@@ -4,7 +4,7 @@ from .model import Widget
 from .interface import WidgetInterface
 
 
-class WidgetService():
+class WidgetService:
     @staticmethod
     def get_all() -> List[Widget]:
         return Widget.query.all()
@@ -30,10 +30,7 @@ class WidgetService():
 
     @staticmethod
     def create(new_attrs: WidgetInterface) -> Widget:
-        new_widget = Widget(
-            name=new_attrs['name'],
-            purpose=new_attrs['purpose']
-        )
+        new_widget = Widget(name=new_attrs["name"], purpose=new_attrs["purpose"])
 
         db.session.add(new_widget)
         db.session.commit()

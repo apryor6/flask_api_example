@@ -6,9 +6,7 @@ from .model import Widget
 
 @fixture
 def widget() -> Widget:
-    return Widget(
-        widget_id=1, name='Test widget', purpose='Test purpose'
-    )
+    return Widget(widget_id=1, name="Test widget", purpose="Test purpose")
 
 
 def test_Widget_create(widget: Widget):

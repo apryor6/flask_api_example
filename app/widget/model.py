@@ -4,9 +4,9 @@ from .interface import WidgetInterface
 
 
 class Widget(db.Model):  # type: ignore
-    '''A snazzy Widget'''
+    """A snazzy Widget"""
 
-    __tablename__ = 'widget'
+    __tablename__ = "widget"
 
     widget_id = Column(Integer(), primary_key=True)
     name = Column(String(255))

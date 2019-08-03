@@ -6,9 +6,7 @@ from .model import Whatsit
 
 @fixture
 def whatsit() -> Whatsit:
-    return Whatsit(
-        whatsit_id=1, name='Test whatsit', purpose='Test purpose'
-    )
+    return Whatsit(whatsit_id=1, name="Test whatsit", purpose="Test purpose")
 
 
 def test_Whatsit_create(whatsit: Whatsit):

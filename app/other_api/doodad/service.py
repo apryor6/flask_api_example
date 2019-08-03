@@ -4,7 +4,7 @@ from .model import Doodad
 from .interface import DoodadInterface
 
 
-class DoodadService():
+class DoodadService:
     @staticmethod
     def get_all() -> List[Doodad]:
         return Doodad.query.all()
@@ -30,10 +30,7 @@ class DoodadService():
 
     @staticmethod
     def create(new_attrs: DoodadInterface) -> Doodad:
-        new_doodad = Doodad(
-            name=new_attrs['name'],
-            purpose=new_attrs['purpose']
-        )
+        new_doodad = Doodad(name=new_attrs["name"], purpose=new_attrs["purpose"])
 
         db.session.add(new_doodad)
         db.session.commit()

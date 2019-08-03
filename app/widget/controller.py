@@ -9,47 +9,47 @@ from .service import WidgetService
 from .model import Widget
 from .interface import WidgetInterface
 
-api = Namespace('Widget', description='Single namespace, single entity')  # noqa
+api = Namespace("Widget", description="Single namespace, single entity")  # noqa
 
 
-@api.route('/')
+@api.route("/")
 class WidgetResource(Resource):
-    '''Widgets'''
+    """Widgets"""
 
     @responds(schema=WidgetSchema, many=True)
     def get(self) -> List[Widget]:
-        '''Get all Widgets'''
+        """Get all Widgets"""
 
         return WidgetService.get_all()
 
     @accepts(schema=WidgetSchema, api=api)
     @responds(schema=WidgetSchema)
     def post(self) -> Widget:
-        '''Create a Single Widget'''
+        """Create a Single Widget"""
 
         return WidgetService.create(request.parsed_obj)
 
 
-@api.route('/<int:widgetId>')
-@api.param('widgetId', 'Widget database ID')
+@api.route("/<int:widgetId>")
+@api.param("widgetId", "Widget database ID")
 class WidgetIdResource(Resource):
     @responds(schema=WidgetSchema)
     def get(self, widgetId: int) -> Widget:
-        '''Get Single Widget'''
+        """Get Single Widget"""
 
         return WidgetService.get_by_id(widgetId)
 
     def delete(self, widgetId: int) -> Response:
-        '''Delete Single Widget'''
+        """Delete Single Widget"""
         from flask import jsonify
 
         id = WidgetService.delete_by_id(widgetId)
-        return jsonify(dict(status='Success', id=id))
+        return jsonify(dict(status="Success", id=id))
 
     @accepts(schema=WidgetSchema, api=api)
     @responds(schema=WidgetSchema)
     def put(self, widgetId: int) -> Widget:
-        '''Update Single Widget'''
+        """Update Single Widget"""
 
         changes: WidgetInterface = request.parsed_obj
         Widget = WidgetService.get_by_id(widgetId)
