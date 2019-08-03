@@ -1,4 +1,6 @@
-# flask_api_example
+# Example of a scalable Flask API
+
+This is an example project using the structure propsed in [this blog post](http://alanpryorjr.com/2019-05-20-flask-api-example/)
 
 A sample project showing how to build a scalable, maintainable, modular Flask API with a heavy emphasis on testing.
 
@@ -34,3 +36,12 @@ python wsgi.py
 ```
 
 Navigate to the posted URL in your terminal to be greeted with Swagger, where you can test out the API.
+
+## Running tests
+
+To run the test suite, simply pip install it and run from the root directory like so
+
+```
+pip install pytest
+pytest
+```
