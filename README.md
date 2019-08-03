@@ -2,7 +2,7 @@
 
 A sample project showing how to build a scalable, maintainable, modular Flask API with a heavy emphasis on testing.
 
-_This is an example project using the structure propsed in [this blog post](http://alanpryorjr.com/2019-05-20-flask-api-example/)._
+_This is an example project using the structure proposed in [this blog post](http://alanpryorjr.com/2019-05-20-flask-api-example/)._
 
 
 ## Running the app
