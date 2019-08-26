@@ -38,6 +38,9 @@ python wsgi.py
 
 Navigate to the posted URL in your terminal to be greeted with Swagger, where you can test out the API.
 
+![The site](docs/site.png)
+
+
 ## Running tests
 
 To run the test suite, simply pip install it and run from the root directory like so
@@ -46,3 +49,4 @@ To run the test suite, simply pip install it and run from the root directory lik
 pip install pytest
 pytest
 ```
+
