@@ -37,7 +37,7 @@ class TestFizzbarResource:
                         make_fizzbar(456, name="Test Fizzbar 2"),
                     ]
                 )
-                .data
+                
             )
             for r in results:
                 assert r in expected
@@ -53,7 +53,7 @@ class TestFizzbarResource:
             expected = (
                 FizzbarSchema()
                 .dump(Fizzbar(name=payload["name"], purpose=payload["purpose"]))
-                .data
+                
             )
             assert result == expected
 
@@ -94,6 +94,6 @@ class TestFizzbarIdResource:
                 .dump(
                     Fizzbar(fizzbar_id=123, name="New Fizzbar", purpose="New purpose")
                 )
-                .data
+                
             )
             assert result == expected

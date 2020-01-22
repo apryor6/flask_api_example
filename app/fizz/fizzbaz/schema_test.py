@@ -17,7 +17,7 @@ def test_FizzbazSchema_create(schema: FizzbazSchema):
 def test_FizzbazSchema_works(schema: FizzbazSchema):
     params: FizzbazInterface = schema.load(
         {"fizzbazId": "123", "name": "Test fizzbaz", "purpose": "Test purpose"}
-    ).data
+    )
     fizzbaz = Fizzbaz(**params)
 
     assert fizzbaz.fizzbaz_id == 123

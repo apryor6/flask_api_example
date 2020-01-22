@@ -37,7 +37,7 @@ class TestWhatsitResource:
                         make_whatsit(456, name="Test Whatsit 2"),
                     ]
                 )
-                .data
+                
             )
             for r in results:
                 assert r in expected
@@ -53,7 +53,7 @@ class TestWhatsitResource:
             expected = (
                 WhatsitSchema()
                 .dump(Whatsit(name=payload["name"], purpose=payload["purpose"]))
-                .data
+                
             )
             assert result == expected
 
@@ -94,6 +94,6 @@ class TestWhatsitIdResource:
                 .dump(
                     Whatsit(whatsit_id=123, name="New Whatsit", purpose="New purpose")
                 )
-                .data
+                
             )
             assert result == expected
