@@ -1,6 +1,6 @@
 from flask import request
 from flask_accepts import accepts, responds
-from flask_restplus import Namespace, Resource
+from flask_restx import Namespace, Resource
 from flask.wrappers import Response
 from typing import List
 

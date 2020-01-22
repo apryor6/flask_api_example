@@ -1,6 +1,6 @@
 from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
-from flask_restplus import Api
+from flask_restx import Api
 
 db = SQLAlchemy()
 

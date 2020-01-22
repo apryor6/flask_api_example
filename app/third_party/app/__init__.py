@@ -1,7 +1,7 @@
 def create_bp(env=None):
     from flask import Blueprint, jsonify
     from flask_sqlalchemy import SQLAlchemy
-    from flask_restplus import Api, Resource, Namespace
+    from flask_restx import Api, Resource, Namespace
 
     bp = Blueprint("Example third party API", __name__)
     api = Api(bp, title="Flaskerific API", version="0.1.0")

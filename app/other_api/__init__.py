@@ -3,7 +3,7 @@ BASE_ROUTE = "other_api"
 
 def register_routes(api, app, root="api"):
     from flask import Blueprint
-    from flask_restplus import Api
+    from flask_restx import Api
 
     bp = Blueprint("other_api", __name__)
     api = Api(bp, title="Another API with separate Swagger docs", version="0.1.0")
