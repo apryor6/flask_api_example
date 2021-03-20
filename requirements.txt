@@ -8,7 +8,7 @@ flask-restplus==0.12.1
 Flask-Script==2.0.6
 Flask-SQLAlchemy==2.4.0
 itsdangerous==1.1.0
-Jinja2==2.10.1
+Jinja2==2.11.3
 jsonschema==3.0.2
 MarkupSafe==1.1.1
 marshmallow==3.2.0
