@@ -20,7 +20,7 @@ def run():
 
 @manager.command
 def init_db():
-    print("Creating all resources.")
+    print("Creating all available resources.")
     db.create_all()
 
 
